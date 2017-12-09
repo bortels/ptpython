@@ -108,6 +108,10 @@ class PythonRepl(PythonInput):
             # When the input starts with Ctrl-Z, quit the REPL.
             cli.exit()
 
+        elif line.lstrip == "exit":
+            # We know you want to exit, don't be pedantic
+            cli.exit()
+
         elif line.lstrip().startswith('!'):
             # Run as shell command
             os.system(line[1:])
